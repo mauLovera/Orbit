@@ -4,15 +4,25 @@
 </head>
 <body>
   <nav>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
+    <!-- SEARCH BAR -->
+    <div class="nav-search">
+      <div class="nav-search-bar">SEARCH</div>
+    </div>
+    <!-- LOGO -->
+    <div class="nav-logo">
+      <a href="" class="nav-logo-text">
+        <img src="/images/page/orbit.svg" alt="" class="nav-logo-orbit">
+        rbit
       </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
+    </div>
+    <!-- LINKS -->
+    <div class="nav-links">
+      <a href="">Games</a>
+      <a href="">Community</a>
+      <!-- EJS IF ELSE HERE -->
+      <a href="">Profile</a>
+      <a href="">
+        <div class="nav-profile-pic"></div>
       </a>
-    <% } %>
+    </div>
   </nav>
