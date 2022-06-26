@@ -4,25 +4,19 @@
 </head>
 <body>
   <nav>
-    <!-- SEARCH BAR -->
-    <div class="nav-search">
-      <div class="nav-search-bar">SEARCH</div>
+    <div class="hamburger-container">
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
     </div>
-    <!-- LOGO -->
-    <div class="nav-logo">
-      <a href="" class="nav-logo-text">
-        <img src="/images/page/orbit.svg" alt="" class="nav-logo-orbit">
-        rbit
-      </a>
+    <div class="title-container">
+      <h1 class="title">ORBIT</h1>
     </div>
-    <!-- LINKS -->
-    <div class="nav-links">
-      <a href="">Games</a>
-      <a href="">Community</a>
-      <!-- EJS IF ELSE HERE -->
-      <a href="">Profile</a>
+    <%# If user is logged in display profile pic %> 
+    <%# If user is not logged in display google button %> 
+    <div class="profile-container">
       <a href="">
-        <div class="nav-profile-pic"></div>
+        <div class="profile-pic"></div>
       </a>
     </div>
   </nav>
