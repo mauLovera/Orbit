@@ -10,8 +10,8 @@
       </a>
       <%# if user is not logged in href to google auth / else profile/:id %> 
       <% if (user) { %> 
-        <a href="/profiles"> <%# /profiles/${profile.id} %> 
-          <div class="d-flx flx-c-c nav-circle">
+        <a href="/profiles/<%= user.profile._id %>"> <%# /profiles/${profile.id} %> 
+          <div class="d-flx flx-c-c nav-circle fw-700">
             <% const nameToInitials = () => { %> 
               <% const name = user.profile.name.split(' ') %> 
               <% const initHolder = [] %> 
