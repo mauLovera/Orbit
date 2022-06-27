@@ -6,260 +6,299 @@ html {
 *::before, 
 *::after {
   box-sizing: inherit;
-  font-weight: 400;
-  color: white;
 }
 
+/**=================== Colors ======================= */
+
 :root {
-  font-size: 62.5%;
+  color: white; /*! TESTING */
+  --nav-c: linear-gradient(90deg, #223A40, #556A73);
+  --nav-c-hover: #556A73;
 }
+
+/**================ Resets / Boilerplate ========== */
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+}
 
 body {
-  background: url('/images/assets/bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: system-ui, -apple-system;
-  margin: 0;
   height: 100vh;
   width: 100vw;
+  margin: 0;
+  background-color: black;  /*! TESTING */
+
+  /* Scroll Bar Disable */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+/**================ Utility Classes =============== */
+
+/*? ========= FONTS ======== */
+
+.lato {
+  font-family: 'Lato';
+}
+
+.t-center {
+  text-align: center;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+/*? ========= FLEX ======== */
+
+.d-flx {
+  display: flex;
+}
+
+.flx-r {
+  flex-direction: row;
+}
+
+.flx-rr {
+  flex-direction: row-reverse;
+}
+
+.flx-c {
+  flex-direction: column;
+}
+
+.flx-cr {
+  flex-direction: column-reverse;
+}
+
+/* ============START============= */
+
+/* start start */
+.flx-s-s {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* start center */
+.flx-s-c {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* start end */
+.flx-s-e {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+/* =============END=========== */
+
+/* end start */
+.flx-e-s {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* end center */
+.flx-e-c {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* end end */
+.flx-e-e {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* =============CENTER=========== */
+
+/* center start */
+.flx-c-s {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* center center */
+.flx-c-c {
+  justify-content: center;
+  align-items: center;
+}
+
+/* center end */
+.flx-c-e {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/*? ========= DIMENSIONS ======== */
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 /** ===================== Nav ===================== */
 
 nav {
-  display: flex;
-  flex-direction: row;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-
-  height: 8vh;
-  width: 100vw;
-  background-color: #171A21;
-  color: white;
-  font-size: 1.6rem;
-  text-align: center;
-  border-bottom: 1px solid white;
+  gap: 1em;
+  width: 5em;
+  background: var(--nav-c);
 }
 
-.hamburger-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  gap: .8rem;
-  margin-left: 1.5rem;
+.top-nav {
+  justify-self: flex-start;
+  gap: 1em;
 }
 
-.h-line {
-  height: 1px;
-  background-color: white;
-  width: 30px;
+.mid-nav {
+  justify-self: flex-start;
+  gap: 1em;
 }
 
-.title-container {
-
+.bot-nav {
+  justify-self: flex-end;
+  gap: 1em;
 }
 
-.title {
-  font-size: 3.25rem;
-  letter-spacing: .25rem;
-}
-
-.profile-container {
-  margin-right: 1.5rem;
-}
-
-.profile-pic {
-  height: 38px;
-  width: 38px;
-  border-radius: 50%;
-  background-color: white;
-}
-
-/** ======================== Header ========================= */
-
-.header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  
-  padding-left: 2.3rem;
-  padding-right: .5rem;
-
-  background-color: rgba(0, 0, 0, 0.295);
-  border-bottom: 1px solid white;
-}
-
-.header-title {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-
-  font-size: 2.05rem;
-  font-weight: 600;
-}
-
-.header-message {
-  margin: 0;
-  margin-bottom: 1rem;
-
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 35px;
-}
-
-/** ====================== Index Content ===================== */
-
-.index-content-container {
-  
-}
-
-.community-pick-container {
+/*?================== LOGO ====================*/
+.logo {
   position: relative;
-  display: flex;
-  justify-content: space-around;
-  height: 8vh;
-
-  background-color: #171A21;
-  border-bottom: 1px solid white;
+  margin-top: 1em; /*! RESPONSIVE*/
 }
 
-.community-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  font-size: 1.5rem;
+.orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: .7em;
+  width: .7em;
+  margin-top: .1em;
+  margin-left: .1em;
+  border-radius: 50%;
+  background: white;
 }
+/*?============== NAV ELEMENTS =========== */
 
-.community-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 2.15rem;
-  font-family: 'horizonmedium';
-}
-
-.main-content-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background-color: #171A21;
-}
-
-.main-c-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  padding: 1rem;
-  margin-left: 1rem;
-}
-
-.game-cover {
-  background-image: url("/images/assets/horizon-cover.png");
-  background-size: cover;
-  background-position: center;
-  height: 220px;
-  width: 183px;
-}
-
-.genres {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.genre-bubble {
-  padding: .5rem 1rem;
-  font-size: 1.25rem;
-  text-align: center;
-  background-color: #5f6609;
-  border-radius: 25px;
-}
-
-.main-c-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  width: 50%;
-  padding: 1rem;
-  margin-right: 1rem;
-}
-
-.game-title {
-  font-size: 2.15rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.game-description {
-  font-size: 1.25rem;
-  line-height: 25px;
-}
-
-/* */
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: #171A21;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.button-container > button {
-  background-color: rgba(0, 0, 0, 0.363);
-  height: 42px;
-  width: 120px;
+.nav-circle {
+  flex-shrink: 0;
+  height: 3.5em;
+  width: 3.5em;
+  border-radius: 50%;
   border: 1px solid white;
-  border-radius: 25px;
 }
 
-/* */
-
-.reviews-container {
-  background-color: #171A21;
+.nav-circle:hover {
+  background-color: var(--nav-c-hover);
+  cursor: pointer;
 }
 
-.review-title-container {
-  padding: 1rem 2.25rem;
+/*? ======== FA ICONS ======== */
+
+.icon {
+  
 }
 
-.review-t-text {
-  margin: 0;
+/*! ======== NAV MEDIA QUERIES ============ */
+
+ /* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  nav {
+      height: 5em !important;
+      width: 100% !important;
+      flex-direction: row !important;
+      justify-content: center;
+  }
+
+  .logo {
+    margin-top: 0 !important;
+  }
+
+  .top-nav {
+    flex-direction: row !important;
+    justify-self: flex-start;
+    gap: 1em;
+  }
+  
+  .mid-nav {
+    flex-direction: row !important;
+    justify-self: flex-start;
+    gap: 1em;
+  }
+  
+  .bot-nav {
+    flex-direction: row !important;
+    justify-self: flex-end;
+    gap: 1em;
+
+    display: none !important;
+  }
 }
 
-.review-content-container {
-  padding-left: 2.25rem;
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  nav {
+      background-color: yellow;
+  }
 }
 
-.reviewer {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+  nav {
+      background-color: blue;
+  }
 }
 
-.review {
-  font-size: 1.5rem;
-  border-left: 3px solid silver;
-  padding: .5rem 1rem;
-  background-color: #242330;
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+  nav {
+      background-color: green;
+  }
 }
 
-.review > p {
-  margin: 0;
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+  nav {
+      background-color: white;
+  }
 }

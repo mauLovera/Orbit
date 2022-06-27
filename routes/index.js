@@ -1,10 +1,11 @@
 import { Router } from 'express'
+import * as indexCtrl from '../controllers/index.js'
 
 const router = Router()
 
-router.get('/', function (req, res) {
-  res.render('index', { title: 'Home Page', user: req.user ? req.user : null })
-})
+//* GET to localhost:3000
+//? Display profile photo on navbar
+router.get('/', indexCtrl.index)
 
 export {
   router

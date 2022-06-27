@@ -1,8 +1,13 @@
 import mongoose from 'mongoose'
+import { gameSchema } from './game.js'
 
-const profileSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const profileSchema = new Schema({
   name: String,
   avatar: String,
+  orbit: [gameSchema],
+  bio: String,
 }, {
   timestamps: true
 })

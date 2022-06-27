@@ -1,22 +1,37 @@
-  <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
-  <% } %>
 </head>
 <body>
-  <nav>
-    <div class="hamburger-container">
-      <div class="h-line"></div>
-      <div class="h-line"></div>
-      <div class="h-line"></div>
-    </div>
-    <div class="title-container">
-      <h1 class="title">ORBIT</h1>
-    </div>
-    <%# If user is logged in display profile pic %> 
-    <%# If user is not logged in display google button %> 
-    <div class="profile-container">
+  <nav class="h-100 d-flx flx-c lato">
+    <div class="d-flx flx-c top-nav">
       <a href="">
-        <div class="profile-pic"></div>
+        <div class="d-flx flx-c-c fw-700 logo nav-circle">
+          <div class="orbit d-flx flx-c-c"></div>
+          Orbit
+        </div>
       </a>
+      <a href="">
+        <div class="d-flx flx-c-c nav-circle">
+          <%# profile.avatar ? profile.avatar : <Initials>  %> 
+            ML
+        </div>
+      </a>
+    </div>
+      <%# Seperate Here %> 
+    <div class="d-flx flx-c mid-nav">
+      <div class="d-flx flx-c-c nav-circle t-center icon">
+        <a href=""><i class="fa-solid fa-house"></i></a>
+      </div>
+      <div class="d-flx flx-c-c nav-circle t-center icon">
+        <a href=""><i class="fa-solid fa-search"></i></a>
+      </div>
+      <div class="d-flx flx-c-c nav-circle t-center icon">
+        <a href=""><i class="fa-solid fa-user-group"></i></a>
+      </div>
+    </div>
+    <div 
+      class="d-flx flx-c bot-nav" 
+      style="visibility: hidden; margin-bottom: 1em;"
+    >
+      <div class="nav-circle"></div>
+      <div class="nav-circle"></div>
     </div>
   </nav>
