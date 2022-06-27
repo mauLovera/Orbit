@@ -228,7 +228,7 @@ nav {
   border: 1px solid white;
 }
 
-.nav-circle:hover {
+.nav-circle:hover { /*! FILL ANIMATION */
   background-color: var(--nav-c-hover);
   cursor: pointer;
 }
@@ -244,10 +244,10 @@ nav {
  /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
   nav {
-      height: 5em !important;
-      width: 100% !important;
-      flex-direction: row !important;
-      justify-content: center;
+    height: 5em !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: center;
   }
 
   .logo {
@@ -278,27 +278,54 @@ nav {
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
   nav {
-      background-color: yellow;
+    height: 5em !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+
+  .logo {
+    margin-top: 0 !important;
+  }
+
+  .top-nav {
+    flex-direction: row !important;
+    justify-self: flex-start;
+    gap: 1em;
+  }
+  
+  .mid-nav {
+    flex-direction: row !important;
+    justify-self: flex-start;
+    gap: 1em;
+  }
+  
+  .bot-nav {
+    flex-direction: row !important;
+    justify-self: flex-end;
+    gap: 1em;
+
+    display: none !important;
   }
 }
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
   nav {
-      background-color: blue;
+      
   }
 }
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px){
   nav {
-      background-color: green;
+      
   }
 }
 
 /* Media Query for Large screens */
 @media (min-width: 1281px) {
   nav {
-      background-color: white;
+      
   }
 }

@@ -1,5 +1,17 @@
 import { Game } from "../models/game.js"
 
+
+//? Render index view and pass game model
+function index (req, res) {
+  Game.find({})
+  .then (games => {
+    res.render('games', {
+      title: `Games | Orbit`,
+      games
+    })
+  })
+}
+
 //? Render show view and pass the game that was found 
 function show (req, res) {
   Game.findById(req.params.id)
@@ -32,6 +44,7 @@ function search(req, res) {
 }
 
 export {
+  index,
   show,
   search
 }

@@ -2,30 +2,52 @@
 <body>
   <nav class="h-100 d-flx flx-c lato">
     <div class="d-flx flx-c top-nav">
-      <a href="">
+      <a href="/">
         <div class="d-flx flx-c-c fw-700 logo nav-circle">
           <div class="orbit d-flx flx-c-c"></div>
           Orbit
         </div>
       </a>
-      <a href="">
-        <div class="d-flx flx-c-c nav-circle">
-          <%# profile.avatar ? profile.avatar : <Initials>  %> 
-            ML
-        </div>
-      </a>
+      <%# if user is not logged in href to google auth / else profile/:id %> 
+      <% if (user) { %> 
+        <a href="/profiles"> <%# /profiles/${profile.id} %> 
+          <div class="d-flx flx-c-c nav-circle">
+            <% const nameToInitials = () => { %> 
+              <% const name = user.profile.name.split(' ') %> 
+              <% const initHolder = [] %> 
+              <% name.forEach(word => { %> 
+                <% initHolder.push(word.charAt(0))%> 
+              <% }) %>
+              <% return initHolder.join('') %>  
+            <% } %>
+            <%= nameToInitials() %>  
+          </div>
+        </a>
+      <% } else { %>
+        <a href="/auth/google">
+          <div class="d-flx flx-c-c nav-circle">
+            <i class="fa-brands fa-google"></i>
+          </div>
+        </a>
+      <% } %> 
     </div>
       <%# Seperate Here %> 
     <div class="d-flx flx-c mid-nav">
-      <div class="d-flx flx-c-c nav-circle t-center icon">
-        <a href=""><i class="fa-solid fa-house"></i></a>
-      </div>
-      <div class="d-flx flx-c-c nav-circle t-center icon">
-        <a href=""><i class="fa-solid fa-search"></i></a>
-      </div>
-      <div class="d-flx flx-c-c nav-circle t-center icon">
-        <a href=""><i class="fa-solid fa-user-group"></i></a>
-      </div>
+      <a href="/">
+        <div class="d-flx flx-c-c nav-circle t-center icon">
+          <i class="fa-solid fa-house"></i>
+        </div>
+      </a>
+      <a href="/games">
+        <div class="d-flx flx-c-c nav-circle t-center icon">
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </a>
+      <a href="/profiles">
+        <div class="d-flx flx-c-c nav-circle t-center icon">
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+      </a>
     </div>
     <div 
       class="d-flx flx-c bot-nav" 
