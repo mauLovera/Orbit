@@ -13,7 +13,9 @@ html {
 :root {
   color: white; /*! TESTING */
   --nav-c: linear-gradient(90deg, #223A40, #556A73);
+  --nav-c-mobile: linear-gradient(180deg, #223A40, #556A73);
   --nav-c-hover: #556A73;
+  --main-c: #F5F6F6;
 }
 
 /**================ Resets / Boilerplate ========== */
@@ -29,6 +31,7 @@ ul {
 }
 
 body {
+  display: flex;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -42,6 +45,7 @@ body {
 body::-webkit-scrollbar {
   display: none; 
 }
+
 
 /**================ Utility Classes =============== */
 
@@ -239,6 +243,7 @@ nav {
   
 }
 
+
 /*! ======== NAV MEDIA QUERIES ============ */
 
  /* Media Query for Mobile Devices */
@@ -248,6 +253,7 @@ nav {
     width: 100% !important;
     flex-direction: row !important;
     justify-content: center;
+    background: var(--nav-c-mobile) !important;
   }
 
   .logo {
@@ -282,6 +288,7 @@ nav {
     width: 100% !important;
     flex-direction: row !important;
     justify-content: space-around;
+    background: var(--nav-c-mobile) !important;
   }
 
   .logo {
@@ -328,4 +335,208 @@ nav {
   nav {
       
   }
+}
+
+
+/** ======================== Main ===================== */
+
+
+main {
+  margin-left: 5em; /*! RESPONSIVE */
+  background: var(--main-c);
+  color: black;
+}
+
+
+/** ======================== Profile ===================== */
+
+/*? ========== PROFILE BANNER ===========  */
+.p-banner {
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1em;
+  height: 20em;
+  background-color: #223A40; /*! TESTING */
+  color: var(--main-c);
+}
+
+.p-picture {
+  position: absolute;
+  bottom: -2em;
+  flex-shrink: 0;
+  height: 15em;
+  width: 15em;
+  margin-left: 2em; /*! RESPONSIVE */ 
+  border-radius: 50%;
+  border-style: inset;
+  border: 5px solid white;
+  background-color: #223A40; /*! TESTING */
+}
+
+.p-picture-text {
+  font-size: 5em;
+  font-weight: 600;
+}
+
+.p-welcome {
+  position: absolute;
+  right: 0;
+  margin-top: 2em;
+  margin-right: 1em; /*! RESPONSIVE */ 
+  font-style: italic;
+  font-size: 3em;
+}
+
+/*? ========== PROFILE INFO ===========  */
+
+.p-info {
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 10em;
+}
+
+.p-username {
+  margin-left: 7.5em; /*! RESPONSIVE */
+  font-size: 2em;
+}
+
+.p-name {
+  margin-right: 48px; /*! RESPONSIVE */
+  font-size: 2.5em;
+}
+
+/*! ======== MAIN MEDIA QUERIES ============ */
+
+ /* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  main {
+    margin-left: 0 !important;
+    margin-top: 5em;
+  }
+
+  .p-banner {
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1em;
+    height: 15em;
+    background-color: #223A40; /*! TESTING */
+    color: var(--main-c);
+  }
+
+  .p-picture {
+    position: absolute;
+    bottom: -2em;
+    flex: 0 0 auto;
+    height: 10em;
+    width: 10em;
+    margin-left: 1em; /*! RESPONSIVE */ 
+    border-radius: 50%;
+    background-color: #223A40; /*! TESTING */
+  }
+
+  .p-picture-text {
+    font-size: 3em;
+  }
+
+
+  .p-welcome {
+    position: absolute;
+    right: 0;
+    margin-top: 2em;
+    margin-right: .5em; /*! RESPONSIVE */ 
+    font-style: italic;
+    font-size: 2em;
+  }
+
+  .p-username {
+    margin-top: 2em;
+    margin-left: 1.5em;
+    font-size: 1.5em;
+  }
+  
+  .p-name {
+    margin-right: 16px; /*! RESPONSIVE */
+    font-size: 1.5em;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  main {
+    margin-left: 0 !important;
+    margin-top: 5em;
+  }
+
+  .p-banner {
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1em;
+    height: 15em;
+    background-color: #223A40; /*! TESTING */
+    color: var(--main-c);
+  }
+
+  .p-picture {
+    position: absolute;
+    bottom: -2em;
+    flex: 0 0 auto;
+    height: 10em;
+    width: 10em;
+    margin-left: 1em; /*! RESPONSIVE */ 
+    border-radius: 50%;
+    background-color: #223A40; /*! TESTING */
+  }
+
+  .p-picture-text {
+    font-size: 3em;
+  }
+
+  .p-welcome {
+    position: absolute;
+    right: 0;
+    margin-top: 2em;
+    margin-right: .5em; /*! RESPONSIVE */ 
+    font-style: italic;
+    font-size: 2.5em;
+  }
+
+  .p-username {
+    margin-top: 1.25em;
+    margin-left: 2em;
+    font-size: 2em;
+  }
+  
+  .p-name {
+    margin-right: 20px; /*! RESPONSIVE */
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 830px) {
+  .p-username {
+    margin-top: 1.25em;
+    margin-left: 2em;
+    font-size: 2em;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 830px) and (max-width: 1024px){
+  .p-username {
+    margin-left: 7.5em; /*! RESPONSIVE */
+    font-size: 2em;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+
 }

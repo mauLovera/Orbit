@@ -1,4 +1,33 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
+  <main class="h-100 w-100 lato fw-700">
+    <div class="w-100 p-banner d-flx">
+      <div class="p-picture d-flx flx-c-c">
+        <% if (user) { %>
+          <% const nameToInitials = () => { %> 
+            <% const name = user.profile.name.split(' ') %> 
+            <% const initHolder = [] %> 
+            <% name.forEach(word => { %> 
+              <% initHolder.push(word.charAt(0))%> 
+            <% }) %>
+            <% return initHolder.join('') %>  
+          <% } %>
+          <span class="p-picture-text"><%= nameToInitials() %></span>  
+        <% } %> 
+      </div>
+      <div class="fw-700 p-welcome">
+        Welcome, 
+      </div>
+    </div>
+    <div class="d-flx w-100 lato fw-700 p-info">
+      <div class="p-username d-flx flx-c-c">
+        <a href="/profiles/<%= profile._id %>">
+          @Vanthur
+        </a>
+      </div>
+      <div class="p-name">
+        <%= profile.name %> 
+      </div>
+    </div>
+  </main>
 <%- include('../partials/footer') %>
