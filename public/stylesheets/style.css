@@ -585,7 +585,7 @@ main {
 
   .p-welcome {
     right: 0;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     margin-right: .5em; /*! RESPONSIVE */ 
     font-size: 2em;
   }
