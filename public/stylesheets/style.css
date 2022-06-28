@@ -23,6 +23,9 @@ html {
   --p-c-hover: #b68d5b;
   --p-h-links: #223440;
   --p-con-c: #162129;
+
+  --g-c-btn: #987345;
+  --g-c-hover: #b68d5b ;
 }
 
 /**================ Resets / Boilerplate ========== */
@@ -490,13 +493,18 @@ main {
 /*? ========== PROFILE ORBIT  ===========  */
 
 .p-orbit {
+  justify-content: space-between;
   margin-top: 1em;
   margin-left: 270px; /*! RESPONSIVE */
-  justify-content: space-between;
 }
 
 .orbit-game {
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 3em;
+  border-bottom: 2px solid var(--nav-c-hover);
+  border-top: 2px solid var(--nav-c-hover);
+  padding-block: 2em;
 }
 
 /*? ========== GAME TITLE AND ARTWORK  ===========  */
@@ -513,6 +521,7 @@ main {
 
 .g-art-gen-container {
   justify-content: space-between;
+  width: min-content;
   gap: 1em;
 }
 
@@ -527,14 +536,17 @@ main {
 }
 
 .g-gen {
+  justify-self: flex-start;
+  align-self: flex-start;
   align-items: baseline;
   flex-wrap: wrap;
-
 }
 
 /*! UTILITY?  */
 .genre-bubble {
+  flex-shrink: 0;
   margin-right: .5em;
+  margin-bottom: .5em;
   padding: .25em .5em;
   border: 1px solid white;
   border-radius: 20px;
@@ -547,7 +559,35 @@ main {
   cursor: pointer;
 }
 
-/*? ========== GAME BUTTONS ===========  */
+/*? ========== GAME DESCRIPTIONS AND BUTTONS ===========  */
+
+.g-btn-description-container {
+  gap: 1em
+}
+
+.g-button {
+  gap: 1em;
+}
+
+.g-btn {
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: .5em 1em;
+  background-color: var(--g-c-btn);
+  font-size: 1em;
+}
+
+.g-btn:hover {
+  background-color: var(--g-c-hover);
+  cursor: pointer;
+
+}
+
+.g-description {
+  width: 20em;
+  align-self: flex-start;
+}
+
 
 
 .game-right {
@@ -619,7 +659,8 @@ main {
   }
 
   .p-orbit {
-    margin-left: 42px; 
+    margin-left: 42px;
+    margin-right: 42px; 
   }
 }
 
@@ -680,7 +721,8 @@ main {
   }
 
   .p-orbit {
-    margin-left: 64px; 
+    margin-left: 64px;
+    margin-right: 64px; 
   }
 }
 
