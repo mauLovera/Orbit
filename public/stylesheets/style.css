@@ -16,6 +16,7 @@ html {
   --nav-c-mobile: linear-gradient(180deg, #223A40, #556A73);
   --nav-c-hover: #556A73;
   --main-c: #F5F6F6;
+  --p-date-c: rgba(255, 255, 255, 0.635);
 }
 
 /**================ Resets / Boilerplate ========== */
@@ -28,6 +29,10 @@ a {
 ul {
   list-style: none;
   margin: 0;
+}
+
+button {
+  all: unset;
 }
 
 body {
@@ -347,6 +352,14 @@ main {
   color: black;
 }
 
+/** ======================== Index ===================== */
+
+.i-bg {
+  background: url('/images/local/horizon.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
+
 
 /** ======================== Profile ===================== */
 
@@ -396,17 +409,38 @@ main {
 .p-info {
   justify-content: space-between;
   align-items: flex-start;
-  height: 10em;
+  height: 7em;
+  background-color: #223A40;
+  color: white;
 }
 
 .p-username {
+  position: relative;
+  width: fit-content;
+  margin-top: 1em;
   margin-left: 7.5em; /*! RESPONSIVE */
   font-size: 2em;
+  line-height: 1em;
 }
 
-.p-name {
+.p-date {
+  position: absolute;
+  margin-left: .5em; /*! RESPONSIVE */
+  font-size: .5em;
+  color: var(--p-date-c);
+}
+
+.p-buttons {
   margin-right: 48px; /*! RESPONSIVE */
   font-size: 2.5em;
+}
+
+/*? ========== PROFILE SECTION LINKS ===========  */
+
+.p-section-links {
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.5em;
 }
 
 /*! ======== MAIN MEDIA QUERIES ============ */
@@ -443,12 +477,13 @@ main {
   }
 
   .p-username {
-    margin-top: 2em;
-    margin-left: 1.5em;
+    /* margin-top: 2em; */ /*! RESPONSIVE */
+    margin-left: 1.5em; /*! RESPONSIVE */
+    padding: 1em;
     font-size: 1.5em;
   }
   
-  .p-name {
+  .p-buttons {
     margin-right: 16px; /*! RESPONSIVE */
     font-size: 1.5em;
   }
@@ -457,8 +492,8 @@ main {
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
   main {
-    margin-left: 0 !important;
-    margin-top: 5em;
+    margin-left: 0 !important; /*! RESPONSIVE */
+    margin-top: 5em; /*! RESPONSIVE */
   }
 
   .p-banner {
@@ -487,12 +522,13 @@ main {
   }
 
   .p-username {
-    margin-top: 1.25em;
+    margin-top: 1.35em;
     margin-left: 2em;
     font-size: 2em;
+    line-height: 1em;
   }
   
-  .p-name {
+  .p-buttons {
     margin-right: 20px; /*! RESPONSIVE */
     font-size: 2em;
   }

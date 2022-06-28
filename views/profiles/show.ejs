@@ -20,14 +20,30 @@
       </div>
     </div>
     <div class="d-flx w-100 lato fw-700 p-info">
-      <div class="p-username d-flx flx-c-c">
+      <div class="p-username d-flx flx-c-c flx-c">
         <a href="/profiles/<%= profile._id %>">
-          @Vanthur
+          <%# profile.username %> 
+          @Vanthur <br>
+          <span class="fw-400 p-date">in orbit since 2022</span>
         </a>
       </div>
-      <div class="p-name">
-        <%= profile.name %> 
+      <div class="p-buttons d-flx flx-c-c">
+        <%# IF USER %> 
+        <div>Edit</div>
+        <%# IF GUEST  %> 
+        <form action="POST">
+          <div>
+            <button type="submit">
+              <i class="fa-brands fa-plus"></i>
+            </button>
+          </div>
+          <div></div>
+        </form>
       </div>
+    </div>
+    <div class="d-flx p-section-links w-100">
+      <div>Orbit</div>
+      <div>Reviews</div>
     </div>
   </main>
 <%- include('../partials/footer') %>

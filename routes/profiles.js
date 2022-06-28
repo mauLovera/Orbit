@@ -8,7 +8,6 @@ const router = Router()
 //? Render an index view that has all profiles 
 router.get('/', profilesCtrl.index)
 
-
 //* GET to localhost:3000/profile/:id
 //? Render a show view that has profile information of the user or someone elses
 router.get('/:id', isLoggedIn, profilesCtrl.show)
