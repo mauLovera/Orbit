@@ -22,6 +22,7 @@ html {
   --p-c-btn: #987345;
   --p-c-hover: #b68d5b;
   --p-h-links: #223440;
+  --p-con-c: #223440;
 }
 
 /**================ Resets / Boilerplate ========== */
@@ -475,11 +476,69 @@ main {
   margin-bottom: .5em;
 }
 
+/*? ========== PROFILE CONTENT  ===========  */
+
+.p-content {
+  height: 100%;
+  border-top: 2px solid var(--nav-c-hover) ;
+  background-color: var(--p-con-c);
+  color: white;
+}
+
+
 /*? ========== PROFILE ORBIT  ===========  */
 
 .p-orbit {
+  margin-top: 1em;
+  margin-left: 270px; /*! RESPONSIVE */
+}
+
+.orbit-game {
+  gap: 2em;
+}
+
+/*? ========== GAME TITLE AND ARTWORK  ===========  */
+
+.game-left {
+  gap: 1em;
+}
+
+.g-title {
+  font-size: 1.5em;
+}
+
+/* ============= ART AND GENRE ========== */
+
+.g-art-gen-container {
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.g-art {
+  height: 7.5em;
+  width:  6em;
+  background-color: white;
+}
+
+.g-gen {
+  gap: .5em;
+  flex-wrap: wrap;
+  width:  10em;
+}
+
+/*! UTILITY?  */
+.genre-bubble {
   
 }
+
+/*? ========== GAME BUTTONS ===========  */
+
+
+.game-right {
+
+}
+
+
 
 
 /*! ======== MAIN MEDIA QUERIES ============ */
@@ -542,6 +601,10 @@ main {
   #reviews {
     margin-right: 56px;
   }
+
+  .p-orbit {
+    margin-left: 56px; 
+  }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
@@ -599,6 +662,10 @@ main {
   #reviews {
     margin-right: 64px;
   }
+
+  .p-orbit {
+    margin-left: 64px; 
+  }
 }
 
 @media (min-width: 767px) and (max-width: 830px) {
@@ -619,6 +686,10 @@ main {
   #reviews {
     margin-right: 64px;
   }
+
+  .p-orbit {
+    margin-left: 64px; 
+  }
 }
 
 /* Media Query for Tablets Ipads portrait mode */
@@ -638,6 +709,10 @@ main {
 
   #reviews {
     margin-right: 64px;
+  }
+
+  .p-orbit {
+    margin-left: 64px; 
   }
 }
 
