@@ -457,12 +457,30 @@ main {
 /*? ========== PROFILE HEADER LINKS ===========  */
 
 .p-h-links {
-  align-items: center;
-  justify-content: space-around;
-  padding: 2em;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 3em;
   background-color: var(--p-h-links);
-  font-size: 1.5em;
+  color: white;
+  font-size: 2em;
 }
+
+#orbit {
+  margin-left: 270px; /*! RESPONSIVE */
+  margin-bottom: .5em;
+}
+
+#reviews {
+  margin-right: 270px; /*! RESPONSIVE */
+  margin-bottom: .5em;
+}
+
+/*? ========== PROFILE ORBIT  ===========  */
+
+.p-orbit {
+  
+}
+
 
 /*! ======== MAIN MEDIA QUERIES ============ */
 
@@ -512,6 +530,18 @@ main {
   .p-buttons {
     padding: .5em .75em;
   }
+
+  .p-h-links {
+    font-size: 1.25em;
+  }
+
+  #orbit {
+    margin-left: 56px;
+  }
+
+  #reviews {
+    margin-right: 56px;
+  }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
@@ -557,6 +587,18 @@ main {
     margin-right: 20px; /*! RESPONSIVE */
     /* font-size: 2em; */
   }
+
+  .p-h-links {
+    font-size: 1.25em;
+  }
+
+  #orbit {
+    margin-left: 64px;
+  }
+
+  #reviews {
+    margin-right: 64px;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 830px) {
@@ -565,6 +607,18 @@ main {
     margin-left: 2em;
     font-size: 2em;
   }
+
+  .p-h-links {
+    font-size: 1.5em;
+  }
+  
+  #orbit {
+    margin-left: 64px;
+  }
+
+  #reviews {
+    margin-right: 64px;
+  }
 }
 
 /* Media Query for Tablets Ipads portrait mode */
@@ -572,6 +626,18 @@ main {
   .p-username {
     margin-left: 7.5em; /*! RESPONSIVE */
     font-size: 2em;
+  }
+  
+  .p-h-links {
+    font-size: 1.5em;
+  }
+  
+  #orbit {
+    margin-left: 64px;
+  }
+
+  #reviews {
+    margin-right: 64px;
   }
 }
 
