@@ -517,8 +517,8 @@ main {
 
 .g-art {
   flex-shrink: 0;
-  height: 250px;
-  width:  249px;
+  height: 150px;
+  width:  125px;
   background: url('/images/local/horizon-cover.jpg');
   background-size: cover;
   background-position: center;
@@ -598,7 +598,7 @@ main {
   
   .p-button-container {
     margin-right: 16px; /*! RESPONSIVE */
-    /* font-size: 1.5em; */
+    gap: 1em;
   }
   
   .p-buttons {
