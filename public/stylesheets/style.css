@@ -12,11 +12,16 @@ html {
 
 :root {
   color: white; /*! TESTING */
-  --nav-c: linear-gradient(90deg, #223A40, #556A73);
-  --nav-c-mobile: linear-gradient(180deg, #223A40, #556A73);
+  --nav-c: linear-gradient(90deg, #223440, #0e1316);
+  --nav-c-mobile: linear-gradient(180deg, #223440, #0e1316);
   --nav-c-hover: #556A73;
+
   --main-c: #F5F6F6;
+  --p-info-c: #223440;
   --p-date-c: rgba(255, 255, 255, 0.635);
+  --p-c-btn: #987345;
+  --p-c-hover: #b68d5b;
+  --p-h-links: #223440;
 }
 
 /**================ Resets / Boilerplate ========== */
@@ -373,7 +378,6 @@ main {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.203), rgba(0, 0, 0, 0.322)), url('/images/local/ml-banner.jpg');
   background-position: center;
   background-size: cover;
-  background-color: #223A40; /*! TESTING */
   color: var(--main-c);
 }
 
@@ -387,7 +391,7 @@ main {
   border-radius: 50%;
   border-style: inset;
   border: 5px solid white;
-  background-color: #223A40; /*! TESTING */
+  background-color: var(--p-info-c); /*! TESTING */
 }
 
 .p-picture-text {
@@ -410,7 +414,7 @@ main {
   justify-content: space-between;
   align-items: flex-start;
   height: 7em;
-  background-color: #223A40;
+  background-color: var(--p-info-c);
   color: white;
 }
 
@@ -419,7 +423,7 @@ main {
   width: fit-content;
   margin-top: 1em;
   margin-left: 7.5em; /*! RESPONSIVE */
-  font-size: 2em;
+  font-size: 2.25em;
   line-height: 1em;
 }
 
@@ -430,16 +434,33 @@ main {
   color: var(--p-date-c);
 }
 
-.p-buttons {
+.p-button-container {
+  gap: 2em;
+  margin-top: 1em;
   margin-right: 48px; /*! RESPONSIVE */
-  font-size: 2.5em;
 }
 
-/*? ========== PROFILE SECTION LINKS ===========  */
+.p-buttons {
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: .5em 1em;
+  background-color: var(--p-c-btn);
+  font-size: 1em;
+}
 
-.p-section-links {
+
+.p-buttons:hover {
+  background-color: var(--p-c-hover);
+  cursor: pointer;
+}
+
+/*? ========== PROFILE HEADER LINKS ===========  */
+
+.p-h-links {
   align-items: center;
   justify-content: space-around;
+  padding: 2em;
+  background-color: var(--p-h-links);
   font-size: 1.5em;
 }
 
@@ -478,14 +499,18 @@ main {
 
   .p-username {
     /* margin-top: 2em; */ /*! RESPONSIVE */
-    margin-left: 1.5em; /*! RESPONSIVE */
+    margin-left: 1em; /*! RESPONSIVE */
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 1.75em;
+  }
+  
+  .p-button-container {
+    margin-right: 16px; /*! RESPONSIVE */
+    /* font-size: 1.5em; */
   }
   
   .p-buttons {
-    margin-right: 16px; /*! RESPONSIVE */
-    font-size: 1.5em;
+    padding: .5em .75em;
   }
 }
 
@@ -528,9 +553,9 @@ main {
     line-height: 1em;
   }
   
-  .p-buttons {
+  .p-button-container {
     margin-right: 20px; /*! RESPONSIVE */
-    font-size: 2em;
+    /* font-size: 2em; */
   }
 }
 

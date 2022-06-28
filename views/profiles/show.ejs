@@ -27,21 +27,23 @@
           <span class="fw-400 p-date">in orbit since 2022</span>
         </a>
       </div>
-      <div class="p-buttons d-flx flx-c-c">
+      <div class="p-button-container d-flx flx-c-c">
         <%# IF USER %> 
-        <div>Edit</div>
+        <button type="submit" class="d-flx flx-c-c">
+          <div class="p-buttons">Edit</div>
+        </button>
         <%# IF GUEST  %> 
         <form action="POST">
           <div>
-            <button type="submit">
-              <i class="fa-brands fa-plus"></i>
+            <button type="submit" class="d-flx flx-c-c">
+              <i class="fa-solid fa-plus fa-user-group p-buttons">+</i>
             </button>
           </div>
           <div></div>
         </form>
       </div>
     </div>
-    <div class="d-flx p-section-links w-100">
+    <div class="d-flx p-h-links w-100">
       <div>Orbit</div>
       <div>Reviews</div>
     </div>
