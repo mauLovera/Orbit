@@ -22,7 +22,7 @@ html {
   --p-c-btn: #987345;
   --p-c-hover: #b68d5b;
   --p-h-links: #223440;
-  --p-con-c: #223440;
+  --p-con-c: #162129;
 }
 
 /**================ Resets / Boilerplate ========== */
@@ -194,6 +194,7 @@ body::-webkit-scrollbar {
 
 nav {
   position: fixed;
+  z-index: 1000;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
@@ -591,7 +592,7 @@ main {
 
   .p-username {
     /* margin-top: 2em; */ /*! RESPONSIVE */
-    margin-left: 1em; /*! RESPONSIVE */
+    margin-left: .5em; /*! RESPONSIVE */
     padding: 1em;
     font-size: 1.75em;
   }
@@ -610,15 +611,15 @@ main {
   }
 
   #orbit {
-    margin-left: 56px;
+    margin-left: 42px;
   }
 
   #reviews {
-    margin-right: 56px;
+    margin-right: 42px;
   }
 
   .p-orbit {
-    margin-left: 56px; 
+    margin-left: 42px; 
   }
 }
 
