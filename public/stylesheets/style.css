@@ -49,7 +49,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  background-color: black;  /*! TESTING */
+  background-color: var(--p-con-c);  /*! TESTING */
 
   /* Scroll Bar Disable */
   -ms-overflow-style: none;  /* IE and Edge */
@@ -471,12 +471,12 @@ main {
 }
 
 #orbit {
-  margin-left: 270px; /*! RESPONSIVE */
+  margin-left: 200px; /*! RESPONSIVE */
   margin-bottom: .5em;
 }
 
 #reviews {
-  margin-right: 270px; /*! RESPONSIVE */
+  margin-right: 200px; /*! RESPONSIVE */
   margin-bottom: .5em;
 }
 
@@ -495,7 +495,9 @@ main {
 .p-orbit {
   justify-content: space-between;
   margin-top: 1em;
-  margin-left: 270px; /*! RESPONSIVE */
+  margin-left: 200px; /*! RESPONSIVE */
+  margin-right: 200px; /*! RESPONSIVE */
+
 }
 
 .orbit-game {
@@ -747,6 +749,7 @@ main {
 
   .p-orbit {
     margin-left: 64px; 
+    margin-right: 64px; 
   }
 }
 
@@ -771,12 +774,24 @@ main {
 
   .p-orbit {
     margin-left: 64px; 
+    margin-right: 64px; 
   }
 }
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px){
+  #orbit {
+    margin-left: 64px;
+  }
 
+  #reviews {
+    margin-right: 64px;
+  }
+
+  .p-orbit {
+    margin-left: 64px; 
+    margin-right: 64px; 
+  }
 }
 
 /* Media Query for Large screens */
