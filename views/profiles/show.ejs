@@ -56,36 +56,23 @@
     <div class="d-flx w-100 flx-c p-content">
       <%# if orbit active render this %> 
       <div class="p-orbit d-flx">
-        <div>
-          <div class="d-flx flx-s-c orbit-game">
-            <%# list games that are referenced to profile %> 
-            <div class="game-left d-flx flx-c">
-              <div class="g-title">
-                <%# game.title %> 
-                Horizon Forbidden West
-              </div>
-              <div class="d-flx g-art-gen-container">
-                <div class="d-flx flx-c-c g-art">
-                  <%# game.artwork %> 
-                  ArtWork
-                </div>
-                <div class="d-flx g-gen">
-                  <%# game.artwork %> 
-                  <div class="genre-bubble">genre</div>
-                  <div class="genre-bubble">genre</div>
-                  <div class="genre-bubble">genre</div>
-                  <div class="genre-bubble">genre</div>
-                </div>
-              </div>
+        <div class="d-flx orbit-game">
+          <%# list games that are referenced to profile %> 
+          <div class="game-left d-flx flx-c">
+            <div class="g-title">
+              <%# game.title %> 
+              Horizon Forbidden West
             </div>
-            <div class="game-right">
-              <div class="g-details-btn">
-                <a href="<%# games/game._id %>">
-                  Details
-                </a>
+            <div class="d-flx g-art-gen-container">
+              <div class="d-flx flx-c-c g-art">
+                <%# game.artwork %> 
               </div>
-              <div>
-                Review
+              <div class="d-flx g-gen">
+                <%# game.artwork %> 
+                <div class="genre-bubble d-flx">Action</div>
+                <div class="genre-bubble d-flx">RPG</div>
+                <div class="genre-bubble d-flx">Post-Apocalyptic</div>
+                <div class="genre-bubble d-flx">Open World</div>
               </div>
             </div>
           </div>

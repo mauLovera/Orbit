@@ -491,10 +491,11 @@ main {
 .p-orbit {
   margin-top: 1em;
   margin-left: 270px; /*! RESPONSIVE */
+  justify-content: space-between;
 }
 
 .orbit-game {
-  gap: 2em;
+  justify-content: space-between;
 }
 
 /*? ========== GAME TITLE AND ARTWORK  ===========  */
@@ -515,20 +516,34 @@ main {
 }
 
 .g-art {
-  height: 7.5em;
-  width:  6em;
+  flex-shrink: 0;
+  height: 250px;
+  width:  249px;
+  background: url('/images/local/horizon-cover.jpg');
+  background-size: cover;
+  background-position: center;
   background-color: white;
 }
 
 .g-gen {
-  gap: .5em;
+  align-items: baseline;
   flex-wrap: wrap;
-  width:  10em;
+
 }
 
 /*! UTILITY?  */
 .genre-bubble {
-  
+  margin-right: .5em;
+  padding: .25em .5em;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: var(--p-c-btn);
+  text-align: center;
+}
+
+.genre-bubble:hover {
+  background-color: var(--p-c-hover);
+  cursor: pointer;
 }
 
 /*? ========== GAME BUTTONS ===========  */
