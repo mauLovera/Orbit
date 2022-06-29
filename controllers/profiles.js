@@ -45,11 +45,15 @@ function edit(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
-    res.render(`profiles/edit`, {
-      profile,
-      title: `Edit Profile - ${profile.name} | Orbit`,
-      isSelf,
-    })
+    if(isSelf) {
+      res.render(`profiles/edit`, {
+        profile,
+        title: `Edit Profile - ${profile.name} | Orbit`,
+        isSelf,
+      })
+    } else {
+      res.redirect('/')
+    }
   })
   .catch(err => {
     console.log(err)
