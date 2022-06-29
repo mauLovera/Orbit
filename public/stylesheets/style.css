@@ -473,6 +473,14 @@ main {
   background-color: var(--p-c-hover);
   cursor: pointer;
 }
+#add-friend {
+
+}
+
+#remove-friend {
+  background-color: #BF2441;
+  cursor: pointer;
+}
 
 /*? ========== PROFILE HEADER LINKS ===========  */
 
@@ -614,7 +622,7 @@ main {
 
 
 
-/*! ======== MAIN MEDIA QUERIES ============ */
+/*! ======== PROFILE MEDIA QUERIES ============ */
 
  /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
@@ -625,7 +633,7 @@ main {
 
   input {
     font-size: .7em;
-    width: min-content;
+    width: 180px;
   }
 
   .p-save-btn {
@@ -842,4 +850,80 @@ main {
 /* Media Query for Large screens */
 @media (min-width: 1281px) {
 
+}
+
+
+/** ======================== Games ===================== */
+
+.games-banner {
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1em;
+  height: 20em;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.203), rgba(0, 0, 0, 0.322)), url('/images/local/ml-banner.jpg');
+  background-position: center;
+  background-size: cover;
+  color: var(--main-c);
+}
+
+.games-search {
+  position: absolute;
+  right: 0;
+  /* margin-top: 2em; */
+  margin-right: 1em; /*! RESPONSIVE */ 
+  font-style: italic;
+  font-size: 3em;
+}
+
+::placeholder {
+  color: white;
+}
+
+.games-search-form {
+  margin-left: 200px; /*! RESPONSIVE */
+  gap: 1em;
+}
+
+.games-search-bar {
+  height: 10em;
+  background-color: var(--p-info-c);
+  color: white;
+} 
+
+
+/*! ======== GAMES MEDIA QUERIES ============ */
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  body {
+
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+  body {
+
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+  body {
+
+  }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+  body {
+
+  }
 }

@@ -21,19 +21,26 @@ function index (req, res) {
 
 //? Render show view of a profile and pass in a user self checker to conditionally render a button that will allow the user to update certain parts of their profile
 function show (req, res) {
-  Profile.findById(req.params.id)
-  .populate('friends')
-  .then(profile => {
-    const isSelf = profile._id.equals(req.user.profile._id)
-    const isFriend = profile.friends?.includes(req.user.profile._id)
-    res.render('profiles/show', 
-      { 
-        title: `${profile.name} | Orbit`, 
-        profile,
-        isSelf,
-        isFriend,
-      }
-    )
+  Profile.findById(req.user.profile._id)
+  .then(selfProfile => {
+    Profile.findById(req.params.id)
+    .populate('friends')
+    .then(profile => {
+      console.log(profile._id, 'JOHN')
+      console.log("----------------------------");
+      console.log(req.user.profile._id, 'ME')
+      const isSelf = profile._id.equals(req.user.profile._id)
+      const isFriend = profile.friends?.includes(req.user.profile._id)
+      res.render('profiles/show', 
+        { 
+          title: `${profile.name} | Orbit`, 
+          profile,
+          isSelf,
+          isFriend,
+          selfProfile,
+        }
+      )
+    })
   })
   .catch(err => {
     console.log(err)
@@ -73,27 +80,27 @@ function update(req, res) {
 }
 
 function addFriend(req, res) {
-  Profile.findById(req.user.profile)
+  Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.friends.push(req.params._id)
+    profile.friends.push(req.params.id)
     profile.save()
     .then(() => {
-      res.redirect(`/profile/${req.params.id}`)
+      res.redirect(`/profiles/${req.params.id}`)
     })
     .catch((err) => {
       console.log(err)
-      res.redirect('/')
+      res.redirect('/error')
     })
   })
 }
 
 function removeFriend(req, res) {
-  Profile.findById(req.user.profile)
+  Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.friends.remove({_id: req.params._id})
+    profile.friends.remove(req.params.id)
     profile.save()
     .then(() => {
-      res.redirect(`/profile/${req.params.id}`)
+      res.redirect(`/profiles/${req.params.id}`)
     })
     .catch((err) => {
       console.log(err)

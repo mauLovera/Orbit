@@ -1,3 +1,53 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<main class="h-100 w-100 lato fw-700">
+  <div class="w-100 games-banner d-flx">
+    <div class="fw-700 games-search">
+      Search 
+    </div>
+  </div>
+  <div class="d-flx w-100 lato fw-700 games-search-bar flx-c-c">
+    <form action="" class="w-100 d-flx games-search-form" style="justify-content: flex-start; flex-wrap: wrap;">
+      <input type="text" placeholder="I'm Looking For..." required style="font-size: 1.5em;">
+      <button class="g-btn" style="font-size: 1.25em;">Search</button>
+    </form>
+  </div>
+  <div class="d-flx w-100 flx-c p-content">
+    <%# if orbit active render this %> 
+    <div class="p-orbit d-flx flx-c">
+      <div class="d-flx orbit-game">
+        <%# list games that are referenced to profile %> 
+        <div class="game-left d-flx flx-c">
+          <div class="g-title">
+            <%# game.title %> 
+            Horizon Forbidden West
+          </div>
+          <div class="d-flx flx-c-c g-art-gen-container">
+            <div class="d-flx flx-c-c g-art">
+              <%# game.artwork %> 
+            </div>
+            <div class="d-flx g-gen">
+              <%# game.genre for each %> 
+              <div class="genre-bubble d-flx">Action</div>
+              <div class="genre-bubble d-flx">RPG</div>
+              <div class="genre-bubble d-flx">Post-Apocalyptic</div>
+              <div class="genre-bubble d-flx">Open World</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flx flx-c g-btn-description-container">
+          <div class="d-flx flx-c">
+            <form action="POST" class="g-button d-flx">
+              <button class="d-flx flx-c-c g-btn">Add to Orbit</button>
+              <button class="d-flx flx-c-c g-btn">See Game Page</button>
+            </form>
+          </div>
+          <div class="d-flx g-description">
+            Explore distant lands, fight bigger and more awe-inspiring machines, and encounter astonishing new tribes as you return to the far-future, post-apocalyptic world of Horizon.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 <%- include('../partials/footer') %>

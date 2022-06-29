@@ -13,7 +13,6 @@
             <% return initHolder.join('') %>  
           <% } %>
           <span class="p-picture-text"><%= nameToInitials() %></span>
-            
         <% } else { %>
           <img src="<%= profile.avatar %> " alt="" class="h-100 w-100" style="border-radius: 50%;">
         <% } %> 
@@ -36,32 +35,36 @@
       </div>
       <div class="p-button-container d-flx flx-c-c">
         <% if (isSelf) { %>
-          <%# OPTIONAL EDIT PAGE %>
           <a href="/profiles/<%= profile._id %>/edit">
             <button type="submit" class="d-flx flx-c-c">
-              <div class="p-buttons">Edit</div> <%# PROTECT THIS ROUTE %> 
+              <div class="p-buttons">Edit</div>
             </button>
           </a>
         <% } %>
-        <% if (!isSelf && !profile.friends?.includes(profile._id)) { %>
+        <% if (!isSelf && !selfProfile.friends?.includes(profile._id)) { %>
           <form 
-            action="/profiles/<%= profile._id %>/friend?_method=PATCH"
+            action="/profiles/<%= profile.id %>/friend?_method=PATCH"
             method="POST"
           >
             <div>
               <button type="submit" class="d-flx flx-c-c">
-                <i class="fa-solid fa-plus fa-user-group p-buttons">+</i>
+                <div class="p-buttons" style="width: max-content;" id="add-friend">
+                  Add Friend
+                </div>
               </button>
             </div>
           </form>
-        <% } else if (!isSelf && profile.friends?.includes(profile._id)) { %>
+        <% } %>
+        <% if (!isSelf && selfProfile.friends?.includes(profile._id)) { %>
           <form 
-            action="/profiles/<%= profile._id %>/unfriend?_method=PATCH" 
+            action="/profiles/<%= profile.id %>/unfriend?_method=PATCH" 
             method="POST"
           >
             <div>
               <button type="submit" class="d-flx flx-c-c">
-                <i class="fa-solid fa-plus fa-user-group p-buttons"><span">-</span></i>
+                <div class="p-buttons" style="width: max-content;" id="remove-friend">
+                  Remove Friend
+                </div>
               </button>
             </div>
           </form>
@@ -75,7 +78,7 @@
       </div>
       <div id="reviews" style="color: rgba(255, 255, 255, 0.441);">
         <%# deactive %> 
-        Reviews
+        Friends
       </div>
     </div>
     <div class="d-flx w-100 flx-c p-content">
