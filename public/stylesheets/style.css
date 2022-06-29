@@ -882,6 +882,7 @@ main {
 
 .games-search-form {
   margin-left: 200px; /*! RESPONSIVE */
+  margin-right: 200px; /*! RESPONSIVE */
   gap: 1em;
 }
 
@@ -897,27 +898,56 @@ main {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
-
+  .games-search-form {
+    justify-content: space-around;
+    margin-left: 42px; /*! RESPONSIVE */
+    margin-right: 42px;
+    gap: 1em;
+  }
+  #search-input {
+    width: 80%;
+  }
+  #search-btn {
+    width: 20%;
+  }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-  body {
-
+  .games-search-form {
+    margin-left: 64px; /*! RESPONSIVE */
+    margin-right: 64px;
+    gap: 1em;
+  }
+  #search-input {
+    width: 80%;
+  }
+  #search-btn {
+    width: 20%;
   }
 }
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px){
-  body {
-
+  .games-search-form {
+    margin-left: 64px; /*! RESPONSIVE */
+    margin-right: 64px;
+    gap: 1em;
+  }
+  #search-input {
+    width: 75%;
+  }
+  #search-btn {
+    width: 20%;
   }
 }
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px){
-  body {
-
+  .games-search-form {
+    margin-left: 64px; /*! RESPONSIVE */
+    margin-right: 64px;
+    gap: 1em;
   }
 }
 
