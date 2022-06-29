@@ -3,7 +3,7 @@
   <main class="h-100 w-100 lato fw-700">
     <div class="w-100 p-banner d-flx">
       <div class="p-picture d-flx flx-c-c">
-        <% if (user) { %>
+        <% if (isSelf) { %>
           <% const nameToInitials = () => { %> 
             <% const name = user.profile.name.split(' ') %> 
             <% const initHolder = [] %> 
@@ -13,6 +13,8 @@
             <% return initHolder.join('') %>  
           <% } %>
           <span class="p-picture-text"><%= nameToInitials() %></span>  
+        <% } else { %>
+          <img src="<%= profile.avatar %> " alt="" class="h-100 w-100" style="border-radius: 50%;">
         <% } %> 
       </div>
       <div class="fw-700 p-welcome">
@@ -25,7 +27,7 @@
           <% if (profile.username) { %>
             <%= profile.username %> 
           <% } else { %>  
-            @orion
+            <%= profile.name %> 
           <% } %>
           <br>  
           <span class="fw-400 p-date">in orbit since 2022</span>

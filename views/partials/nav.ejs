@@ -12,15 +12,7 @@
       <% if (user) { %> 
         <a href="/profiles/<%= user.profile._id %>"> <%# /profiles/${profile.id} %> 
           <div class="d-flx flx-c-c nav-circle fw-700">
-            <% const nameToInitials = () => { %> 
-              <% const name = user.profile.name.split(' ') %> 
-              <% const initHolder = [] %> 
-              <% name.forEach(word => { %> 
-                <% initHolder.push(word.charAt(0))%> 
-              <% }) %>
-              <% return initHolder.join('') %>  
-            <% } %>
-            <%= nameToInitials() %>
+            <img src="<%= user.profile.avatar %> " alt="" class="h-100 w-100" style="border-radius: 50%;">
           </div>
         </a>
       <% } else { %>
