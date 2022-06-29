@@ -41,6 +41,33 @@ function show (req, res) {
   })
 }
 
+function edit(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    const isSelf = profile._id.equals(req.user.profile._id)
+    res.render(`profiles/edit`, {
+      profile,
+      title: `Edit Profile - ${profile.name} | Orbit`,
+      isSelf,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profile/${profile._id}`)
+  })
+}
+
+function update(req, res) {
+  Profile.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(profile => {
+    res.redirect(`/profiles/${profile._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/profiles")
+  })
+}
+
 function addFriend(req, res) {
   Profile.findById(req.user.profile)
   .then(profile => {
@@ -74,6 +101,8 @@ function removeFriend(req, res) {
 export {
   index,
   show,
+  edit,
+  update,
   addFriend,
   removeFriend,
 }

@@ -12,6 +12,14 @@ router.get('/', profilesCtrl.index)
 //? Render a show view that has profile information of the user or someone elses
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
+//* GET to localhost:3000/profiles/:id/edit
+//? Render an edit view that has forum for the user to update their profile 
+router.get('/:id/edit', isLoggedIn, profilesCtrl.edit)
+
+//* PATCH to localhost:3000/profiles/:id
+//? Update part of the profile
+router.patch('/:id', isLoggedIn, profilesCtrl.update)
+
 //* PATCH to localhost:3000/profiles/:id/friend
 //? Updates part of the users model to now include a reference to the friends profile._id
 router.patch('/:id/friend', isLoggedIn, profilesCtrl.addFriend)

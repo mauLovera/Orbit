@@ -14,7 +14,7 @@ const profileSchema = new Schema({
   avatar: String,
   orbit: [{type: Schema.Types.ObjectId, ref: 'Game'}],
   bio: String,
-  username: String,
+  username: { type: String, default: 'orion'},
   // defaultUsername: { type: String, value: usernameGen() },
   friends: [{type: Schema.Types.ObjectId, ref: 'Profile',}], 
 }, {

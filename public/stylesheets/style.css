@@ -44,6 +44,21 @@ button {
   all: unset;
 }
 
+input {
+  border: none;
+  border-left: 5px solid white;
+  border-radius: 5px;
+  padding: .25em .5em;
+  font-family: 'Lato';
+  font-size: 1em;
+  color: white;
+  background-color: #735837;
+}
+
+input:hover {
+  background-color: #927046;
+}
+
 body {
   display: flex;
   height: 100vh;
@@ -603,6 +618,24 @@ main {
 
  /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
+  #edit {
+    margin-top: .5em;
+    padding: .5em;
+  }
+
+  input {
+    font-size: .7em;
+    width: min-content;
+  }
+
+  .p-save-btn {
+    font-size: .7em;
+  }
+
+  .p-return-btn {
+    font-size: .7em;
+  }
+
   main {
     margin-left: 0 !important;
     margin-top: 5em;
@@ -668,6 +701,18 @@ main {
 
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
+  input {
+    font-size: .75em;
+  }
+
+  .p-save-btn {
+    font-size: .7em;
+  }
+
+  .p-return-btn {
+    font-size: .7em;
+  }
+
   main {
     margin-left: 0 !important; /*! RESPONSIVE */
     margin-top: 5em; /*! RESPONSIVE */

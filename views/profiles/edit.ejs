@@ -22,50 +22,51 @@
         Welcome, 
       </div>
     </div>
-    <div class="d-flx w-100 lato fw-700 p-info">
-      <div class="p-username d-flx flx-c-s flx-c">
-        <a href="/profiles/<%= profile._id %>">
-          <% if (profile.username) { %>
-            @<%= profile.username %> 
-          <% } else { %>  
-            @<%= profile.name %> 
-          <% } %>
+    <div class="d-flx w-100 lato fw-700 p-info" style="height: 7.5em;">
+      <div class="p-username d-flx flx-c-s flx-c" style="" id="edit">
+        <div>
+          <form action="/profiles/<%= profile.id %>?_method=PATCH" method="POST">
+            <% if (profile.username) { %>
+              <label 
+                for="username-input" 
+                style="
+                  font-size: .5em; 
+                  color: #b18958; 
+              ">
+                edit
+              </label>
+              <br>
+              <input type="text" value="<%= profile.username %>" name="username" required>
+            <% } else { %>  
+              <label 
+                for="username-input" 
+                style="
+                  font-size: .5em; 
+                  color: #b18958; 
+              ">
+                edit
+              </label>
+              <br>
+              <input type="text" value="@<%= profile.name %>" name="username" required>
+            <% } %>
           <br>  
-          <span class="fw-400 p-date">in orbit since 2022</span>
-        </a>
+        </div>
       </div>
-      <div class="p-button-container d-flx flx-c-c">
+      <div class="p-button-container d-flx flx-c-c" style="flex-wrap: wrap;">
         <% if (isSelf) { %>
-          <%# OPTIONAL EDIT PAGE %>
-          <a href="/profiles/<%= profile._id %>/edit">
-            <button type="submit" class="d-flx flx-c-c">
-              <div class="p-buttons">Edit</div> <%# PROTECT THIS ROUTE %> 
-            </button>
-          </a>
-        <% } %>
-        <% if (!isSelf && !profile.friends?.includes(profile._id)) { %>
-          <form 
-            action="/profiles/<%= profile._id %>/friend?_method=PATCH"
-            method="POST"
-          >
-            <div>
-              <button type="submit" class="d-flx flx-c-c">
-                <i class="fa-solid fa-plus fa-user-group p-buttons">+</i>
+          <button type="submit" class="d-flx flx-c-c p-save-btn">
+            <div class="p-buttons" style="flex-shrink: 0;">Save Changes</div> 
+          </button>
+        </form> <%# FORM END %> 
+          <% } %>
+          <div>
+            <a href="/profiles/<%= profile._id %>">
+              <button type="submit" class="d-flx flx-c-c p-return-btn">
+                <span class="p-buttons" style="flex-shrink: 0;">Return to Profile</span>
               </button>
-            </div>
-          </form>
-        <% } else if (!isSelf && profile.friends?.includes(profile._id)) { %>
-          <form 
-            action="/profiles/<%= profile._id %>/unfriend?_method=PATCH" 
-            method="POST"
-          >
-            <div>
-              <button type="submit" class="d-flx flx-c-c">
-                <i class="fa-solid fa-plus fa-user-group p-buttons"><span">-</span></i>
-              </button>
-            </div>
-          </form>
-        <% } %> 
+            </a>
+          </div>
+        </form>
       </div>
     </div>
     <div class="d-flx p-h-links w-100">
