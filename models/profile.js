@@ -7,13 +7,12 @@ const usernameGen = () => {
   return ranNumToString = `orion${Number(ranNumToString)}`
 }
 
-
 const Schema = mongoose.Schema
 
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  orbit: [gameSchema],
+  orbit: [{type: Schema.Types.ObjectId, ref: 'Game'}],
   bio: String,
   username: String,
   // defaultUsername: { type: String, value: usernameGen() },

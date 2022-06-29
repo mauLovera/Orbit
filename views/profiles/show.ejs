@@ -12,7 +12,8 @@
             <% }) %>
             <% return initHolder.join('') %>  
           <% } %>
-          <span class="p-picture-text"><%= nameToInitials() %></span>  
+          <span class="p-picture-text"><%= nameToInitials() %></span>
+            
         <% } else { %>
           <img src="<%= profile.avatar %> " alt="" class="h-100 w-100" style="border-radius: 50%;">
         <% } %> 
@@ -27,7 +28,7 @@
           <% if (profile.username) { %>
             <%= profile.username %> 
           <% } else { %>  
-            <%= profile.name %> 
+            @<%= profile.name %> 
           <% } %>
           <br>  
           <span class="fw-400 p-date">in orbit since 2022</span>
