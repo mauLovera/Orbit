@@ -71,8 +71,6 @@ function removeFriend(req, res) {
   })
 }
 
-
-
 export {
   index,
   show,

@@ -14,11 +14,11 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 
 //* PATCH to localhost:3000/profiles/:id/friend
 //? Updates part of the users model to now include a reference to the friends profile._id
-router.get('/:id/friend', isLoggedIn, profilesCtrl.show)
+router.get('/:id/friend', isLoggedIn, profilesCtrl.addFriend)
 
 //* PATCH to localhost:3000/profiles/:id/unfriend
 //? Updates part of the users model to remove the reference of a profile._id if it exists within their friends list
-router.get('/:id/unfriend', isLoggedIn, profilesCtrl.show)
+router.get('/:id/unfriend', isLoggedIn, profilesCtrl.removeFriend)
 
 
 
