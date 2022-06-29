@@ -20,27 +20,49 @@
       </div>
     </div>
     <div class="d-flx w-100 lato fw-700 p-info">
-      <div class="p-username d-flx flx-c-c flx-c">
+      <div class="p-username d-flx flx-c-s flx-c">
         <a href="/profiles/<%= profile._id %>">
-          <%# profile.username %> 
-          @Vanthur <br>
+          <% if (profile.username) { %>
+            <%= profile.username %> 
+          <% } else { %>  
+            @orion
+          <% } %>
+          <br>  
           <span class="fw-400 p-date">in orbit since 2022</span>
         </a>
       </div>
       <div class="p-button-container d-flx flx-c-c">
-        <%# IF USER %> 
-        <button type="submit" class="d-flx flx-c-c">
-          <div class="p-buttons">Edit</div>
-        </button>
-        <%# IF GUEST  %> 
-        <form action="POST">
-          <div>
+        <% if (isSelf) { %>
+          <%# OPTIONAL EDIT PAGE %>
+          <a href="/profile/<%= profile._id %>/edit">
             <button type="submit" class="d-flx flx-c-c">
-              <i class="fa-solid fa-plus fa-user-group p-buttons">+</i>
+              <div class="p-buttons">Edit</div> <%# PROTECT THIS ROUTE %> 
             </button>
-          </div>
-          <div></div>
-        </form>
+          </a>
+        <% } %>
+        <% if (!isSelf && !profile.friends?.includes(profile._id)) { %>
+          <form 
+            action="/profiles/<%= profile._id %>/friend?_method=PATCH"
+            method="POST"
+          >
+            <div>
+              <button type="submit" class="d-flx flx-c-c">
+                <i class="fa-solid fa-plus fa-user-group p-buttons">+</i>
+              </button>
+            </div>
+          </form>
+        <% } else if (!isSelf && profile.friends?.includes(profile._id)) { %>
+          <form 
+            action="/profiles/<%= profile._id %>/unfriend?_method=PATCH" 
+            method="POST"
+          >
+            <div>
+              <button type="submit" class="d-flx flx-c-c">
+                <i class="fa-solid fa-plus fa-user-group p-buttons"><span">-</span></i>
+              </button>
+            </div>
+          </form>
+        <% } %> 
       </div>
     </div>
     <div class="d-flx p-h-links w-100">
@@ -56,38 +78,6 @@
     <div class="d-flx w-100 flx-c p-content">
       <%# if orbit active render this %> 
       <div class="p-orbit d-flx flx-c">
-        <div class="d-flx orbit-game">
-          <%# list games that are referenced to profile %> 
-          <div class="game-left d-flx flx-c">
-            <div class="g-title">
-              <%# game.title %> 
-              Horizon Forbidden West
-            </div>
-            <div class="d-flx flx-c-c g-art-gen-container">
-              <div class="d-flx flx-c-c g-art">
-                <%# game.artwork %> 
-              </div>
-              <div class="d-flx g-gen">
-                <%# game.genre for each %> 
-                <div class="genre-bubble d-flx">Action</div>
-                <div class="genre-bubble d-flx">RPG</div>
-                <div class="genre-bubble d-flx">Post-Apocalyptic</div>
-                <div class="genre-bubble d-flx">Open World</div>
-              </div>
-            </div>
-          </div>
-          <div class="d-flx flx-c g-btn-description-container">
-            <div class="d-flx flx-c">
-              <form action="POST" class="g-button d-flx">
-                <button class="d-flx flx-c-c g-btn">Add to Orbit</button>
-                <button class="d-flx flx-c-c g-btn">See Game Page</button>
-              </form>
-            </div>
-            <div class="d-flx g-description">
-              Explore distant lands, fight bigger and more awe-inspiring machines, and encounter astonishing new tribes as you return to the far-future, post-apocalyptic world of Horizon.
-            </div>
-          </div>
-        </div>
         <div class="d-flx orbit-game">
           <%# list games that are referenced to profile %> 
           <div class="game-left d-flx flx-c">
