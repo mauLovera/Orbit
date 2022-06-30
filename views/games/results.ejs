@@ -39,10 +39,11 @@
             </div>
             <div class="d-flx flx-c g-btn-description-container">
               <div class="d-flx flx-c">
-                <form action="POST" class="g-button d-flx">
-                  <button class="d-flx flx-c-c g-btn">Add to Orbit</button>
-                  <button class="d-flx flx-c-c g-btn">See Game Page</button>
-                </form>
+                <div action="POST" class="g-button d-flx">
+                  <a href="/games/<%= game.id %>">
+                    <div class="d-flx flx-c-c g-btn">See Game Page</div>
+                  </a>
+                </div>
               </div>
               <div class="d-flx g-description flx-c" style="gap: .5em;">
                 <h2>

@@ -15,7 +15,7 @@ const gameSchema = new Schema({
   rawgId: Number,
   description: String,
   artwork: String,
-  collectedBy: { type: Schema.Types.ObjectId, ref: 'Profile'},
+  collectedBy: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
   reviews: [reviewSchema],
   genres: [String],
 }, {

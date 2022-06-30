@@ -1,3 +1,60 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<main class="h-100 w-100 lato fw-700">
+  <div class="w-100 games-banner d-flx" 
+    style="
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.203), rgba(0, 0, 0, 0.322)), url('<%= apiResult.background_image %>');
+      background-position: center;
+      background-size: cover;
+      height: 30em;
+  ">
+    <div class="fw-700 games-search games-show-title">
+      <%= apiResult.name %> 
+    </div>
+  </div>
+  <div class="d-flx w-100 lato fw-700 games-search-bar" style="height: 10em; justify-content: flex-end; align-items: center;">
+    <div class="d-flx games-show-links-container" style="gap: 1em;">
+      <div class="games-show-links-divider" style="align-self: center;">
+        <a href="<%= apiResult.website %>">
+          <div class="d-flx game-show-icon">
+            Website
+          </div>
+        </a>
+      </div>
+      <div class="games-show-links-divider" style="align-self: center;">
+        <% if (!userHasGame) { %>
+          <form action="/games/<%= apiResult.id %>/addToOrbit?_method=PATCH" method="POST">
+            <input type="text" name="title" hidden value="<%= apiResult.name %>">
+            <input type="text" name="rawgId" hidden value="<%= apiResult.id %>">
+            <input type="text" name="artwork" hidden value="<%= apiResult.background_image %>">
+            <% if (apiResult.genres) { %>
+              <% apiResult.genres.forEach(genre => { %>
+                <input type="text" name="genres" hidden value="<%= genre.name %>">
+              <% }) %>
+            <% } %>
+            <button class="d-flx game-show-icon">
+              Add to Orbit
+            </button>
+          </form>
+        <% } else { %>
+          <form action="/games/<%= apiResult.id %>/removeFromOrbit?_method=PATCH" method="POST">
+            <input type="text" name="title" hidden value="<%= apiResult.name %>">
+            <button class="d-flx game-show-icon">
+              Remove From Orbit
+            </button>
+          </form>
+        <% } %> 
+        </a>
+      </div>
+    </div>
+  </div> 
+  <div class="d-flx w-100 flx-c p-content">
+    <div class="p-orbit d-flx flx-c" style="margin-bottom: 50px;">
+      <h1>Description</h1>
+      <%= apiResult.description_raw %>
+      <h1>Screenshot</h1>
+      <img src="<%= apiResult.background_image_additional %>" alt="">
+    </div>
+  </div>
+</main>
 <%- include('../partials/footer') %>

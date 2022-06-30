@@ -16,6 +16,11 @@ router.get('/:id', gamesCtrl.show)
 //? Post the input of the forum submittal to the search view
 router.post('/search', gamesCtrl.search)
 
+router.patch('/:id/addToOrbit', isLoggedIn, gamesCtrl.addToOrbit)
+
+router.patch('/:id/removeFromOrbit', isLoggedIn, gamesCtrl.removeFromOrbit)
+
+
 export {
   router
 }
