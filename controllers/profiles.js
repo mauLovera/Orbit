@@ -1,3 +1,4 @@
+import { Game } from "../models/game.js"
 import { Profile } from "../models/profile.js"
 
 //? Render a view that shows all the profiles within the app 
@@ -31,15 +32,19 @@ function show (req, res) {
       console.log(req.user.profile._id, 'ME')
       const isSelf = profile._id.equals(req.user.profile._id)
       const isFriend = profile.friends?.includes(req.user.profile._id)
-      res.render('profiles/show', 
-        { 
-          title: `${profile.name} | Orbit`, 
-          profile,
-          isSelf,
-          isFriend,
-          selfProfile,
-        }
-      )
+      Game.find({ collectedBy: profile._id })
+      .then(games => {
+        res.render('profiles/show', 
+          { 
+            title: `${profile.name} | Orbit`, 
+            profile,
+            isSelf,
+            isFriend,
+            selfProfile,
+            games,
+          }
+        )
+      })
     })
   })
   .catch(err => {

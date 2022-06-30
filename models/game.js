@@ -18,6 +18,7 @@ const gameSchema = new Schema({
   collectedBy: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
   reviews: [reviewSchema],
   genres: [String],
+  tags: [String],
 }, {
   timestamps: true,
 })

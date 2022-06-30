@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-<main class="h-100 w-100 lato fw-700">
+<main class="h-100 w-100 lato fw-700" style="height: 100vh; width: 100vw;">
   <div class="w-100 games-banner d-flx" 
     style="
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.203), rgba(0, 0, 0, 0.322)), url('<%= apiResult.background_image %>');
@@ -27,6 +27,11 @@
             <input type="text" name="title" hidden value="<%= apiResult.name %>">
             <input type="text" name="rawgId" hidden value="<%= apiResult.id %>">
             <input type="text" name="artwork" hidden value="<%= apiResult.background_image %>">
+            <% if (apiResult.tags) { %>
+              <% apiResult.tags.forEach(tag => { %>
+                <input type="text" name="tags" hidden value="<%= tag.name %>">
+              <% }) %>
+            <% } %>
             <% if (apiResult.genres) { %>
               <% apiResult.genres.forEach(genre => { %>
                 <input type="text" name="genres" hidden value="<%= genre.name %>">
