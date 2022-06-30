@@ -12,9 +12,10 @@ const reviewSchema = new Schema({
 
 const gameSchema = new Schema({
   title: String,
+  rawgId: Number,
   description: String,
   artwork: String,
-  owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
+  collectedBy: { type: Schema.Types.ObjectId, ref: 'Profile'},
   reviews: [reviewSchema],
   genres: [String],
 }, {

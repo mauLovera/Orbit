@@ -1,4 +1,5 @@
 import { Game } from "../models/game.js"
+import axios from "axios"
 
 
 //? Render index view and pass game model
@@ -30,10 +31,16 @@ function show (req, res) {
 }
 
 function search(req, res) {
-  axios.get(`https://api.rawg.io/api/games?page_size=10&search=${req.body.search}&key=${process.env.API_KEY}`)
+  axios.get(
+    `https://api.rawg.io/api/games?page_size=10&search=${req.body.search}&key=${process.env.API_KEY}`
+  )
   .then((response) => {
+    console.log('===============')
+    console.log(response.data)
+    console.log('===============')
+    console.log(req.body)
     res.render("games/results", {
-      title: "Search",
+      title: "Search - ",
       results: response.data.results,
     })
   })

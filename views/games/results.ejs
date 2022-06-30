@@ -1,0 +1,87 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main class="h-100 w-100 lato fw-700">
+  <div class="w-100 games-banner d-flx">
+    <div class="fw-700 games-search">
+      Search 
+    </div>
+  </div>
+  <div class="d-flx w-100 lato fw-700 games-search-bar flx-c-c">
+    <form 
+      action="/games/search" method="POST" 
+      class="w-100 d-flx games-search-form" 
+      style="justify-content: flex-start; flex-wrap: nowrap;"
+    >
+      <input name="search" type="text" placeholder="I'm Looking For..." required style="font-size: 1.25em; height: 48px;" id="search-input" type="search">
+      <button class="g-btn" style="font-size: 1.25em; text-align: center;" id="search-btn" type="submit">Search</button>
+    </form> 
+  </div>
+  <div class="d-flx w-100 flx-c p-content">
+    <div class="p-orbit d-flx flx-c">
+      <% if (results) { %>
+        <% results.forEach(game => { %> 
+          <div class="d-flx orbit-game">
+            <%# list games that are referenced to profile %> 
+            <div class="game-left d-flx flx-c">
+              <div class="g-title">
+                <%= game.name %> 
+              </div>
+              <div class="d-flx flx-c-c g-art-gen-container">
+                <div class="d-flx flx-c-c g-art" style="overflow: hidden;">
+                  <img src="<%= game.background_image %>" alt="" class="h-100" style="">
+                </div>
+                <div class="d-flx g-gen">
+                  <% game.genres.forEach(genre => { %>
+                    <div class="genre-bubble d-flx"><%= genre.name %></div>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+            <div class="d-flx flx-c g-btn-description-container">
+              <div class="d-flx flx-c">
+                <form action="POST" class="g-button d-flx">
+                  <button class="d-flx flx-c-c g-btn">Add to Orbit</button>
+                  <button class="d-flx flx-c-c g-btn">See Game Page</button>
+                </form>
+              </div>
+              <div class="d-flx g-description flx-c" style="gap: .5em;">
+                <h2>
+                  Rating: <%= game.rating_top %>/5
+                </h2>
+                <h2>
+                  Tags:
+                </h2>
+                <div class="d-flx flx-c w-100" 
+                style="
+                      width: fit-content;
+                      border: 1px solid white;           
+                      "
+                  >
+                <% game.tags.forEach((tag, idx) => { %>
+                  <div class="d-flx" style="background-color: #987345; padding-inline: .5em;">
+                    <% if (idx < 3) { %>
+                      <% if (tag.language === 'eng') { %>
+                        ● <%= tag.name %> 
+                      <% } else { %>
+
+                      <% } %> 
+                    <% } %>
+                  </div>
+                  <% }) %>
+                  <% game.forEach(element => { %>
+                   
+                  <% }) %>
+                  <div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</main>
+<%- include('../partials/footer') %>

@@ -40,6 +40,10 @@ ul {
   margin: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
 button {
   all: unset;
 }
@@ -553,8 +557,8 @@ main {
 .g-art {
   flex-shrink: 0;
   height: 150px;
-  width:  125px;
-  background: url('/images/local/horizon-cover.jpg');
+  width:  150px;
+  /* background: url('/images/local/horizon-cover.jpg'); */
   background-size: cover;
   background-position: center;
   background-color: white;
@@ -892,9 +896,14 @@ main {
   color: white;
 } 
 
+#search-input {
+  width: 85%;
+}
+#search-btn {
+  width: 15%;
+}
 
 /*! ======== GAMES MEDIA QUERIES ============ */
-
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
@@ -935,7 +944,7 @@ main {
     gap: 1em;
   }
   #search-input {
-    width: 75%;
+    width: 80%;
   }
   #search-btn {
     width: 20%;
