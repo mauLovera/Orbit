@@ -51,31 +51,48 @@
                 <h2>
                   Tags:
                 </h2>
-                <div class="d-flx flx-c w-100" 
-                style="
-                      width: fit-content;
-                      border: 1px solid white;           
-                      "
-                  >
-                <% game.tags.forEach((tag, idx) => { %>
-                  <div class="d-flx" style="background-color: #987345; padding-inline: .5em;">
-                    <% if (idx < 3) { %>
-                      <% if (tag.language === 'eng') { %>
-                        ● <%= tag.name %> 
-                      <% } else { %>
+                <div class="d-flx" style="background-color: #987345; border: 1px solid white;">
+                  <div class="d-flx flx-c flx-c-c" 
+                  style="
+                        width: 80%;
+                        "
+                    >
+                  <% game.tags.forEach((tag, idx) => { %>
+                    <div class="d-flx" style="background-color: #987345; padding-inline: .5em;">
+                      <% if (idx < 3) { %>
+                        <% if (tag.language === 'eng') { %>
+                          <%= tag.name %> 
+                        <% } else { %>
 
-                      <% } %> 
-                    <% } %>
+                        <% } %> 
+                      <% } %>
+                    </div>
+                    <% }) %>
                   </div>
-                  <% }) %>
-                  <% game.forEach(element => { %>
-                   
-                  <% }) %>
-                  <div>
-
-
+                  <div class="d-flx flx-c-c" style="height: 62px; width: 20%;">
+                    <% if (game.metacritic) { %>
+                      <% if (game.metacritic > 80) { %>
+                      <div class="h-100 w-100 d-flx flx-c-c" style="background-color:green;">
+                        <%= game.metacritic %> 
+                      </div>  
+                      <% } %>
+                      <% if (game.metacritic < 80 && game.metacritic > 60) { %>
+                        <div class="h-100 w-100 d-flx flx-c-c" style="background-color:orange;">
+                          <%= game.metacritic %> 
+                        </div>  
+                      <% } %>  
+                      <% if (game.metacritic < 60) { %>
+                        <div class="h-100 w-100 d-flx flx-c-c" style="background-color:red;">
+                          <%= game.metacritic %> 
+                        </div>  
+                      <% } %>  
+                      <% } else {%> 
+                        <div class="h-100 w-100 d-flx flx-c-c" style="background-color:rgb(0, 0, 0);">
+                          N/A 
+                        </div>  
+                      <% } %>  
                   </div>
-                </div>
+                </div>            
               </div>
             </div>
           </div>
