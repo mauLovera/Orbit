@@ -655,7 +655,7 @@ main {
   }
 
   .p-banner {
-    height: 25em;
+    height: 15em;
     color: var(--main-c);
   }
 
@@ -732,7 +732,7 @@ main {
   }
 
   .p-banner {
-    height: 25em;
+    height: 15em;
     background-color: #223A40; /*! TESTING */
     color: var(--main-c);
   }
