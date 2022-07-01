@@ -388,8 +388,10 @@ main {
 .i-bg {
   background: url('/images/local/horizon.jpg');
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
 }
+
+
 
 
 /** ======================== Profile ===================== */
