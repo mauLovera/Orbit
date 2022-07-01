@@ -3,23 +3,10 @@
   <main class="h-100 w-100 lato fw-700">
     <div class="w-100 p-banner d-flx">
       <div class="p-picture d-flx flx-c-c">
-        <% if (isSelf) { %>
-          <% const nameToInitials = () => { %> 
-            <% const name = user.profile.name.split(' ') %> 
-            <% const initHolder = [] %> 
-            <% name.forEach(word => { %> 
-              <% initHolder.push(word.charAt(0))%> 
-            <% }) %>
-            <% return initHolder.join('') %>  
-          <% } %>
-          <span class="p-picture-text"><%= nameToInitials() %></span>
-            
-        <% } else { %>
-          <img src="<%= profile.avatar %> " alt="" class="h-100 w-100" style="border-radius: 50%;">
-        <% } %> 
+        <img src="<%= profile.avatar %> " alt="" class="h-100 w-100" style="border-radius: 50%;">
       </div>
       <div class="fw-700 p-welcome">
-        Welcome, 
+        Edit 
       </div>
     </div>
     <div class="d-flx w-100 lato fw-700 p-info" style="height: 7.5em;">

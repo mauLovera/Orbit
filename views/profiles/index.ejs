@@ -1,3 +1,25 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+  <main class="h-100 w-100 lato fw-700">
+    <div class="w-100 p-banner d-flx">
+      <div class="fw-700 p-welcome">
+        Community  
+      </div>
+    </div>
+    <div class="d-flx flx-c" style="gap: 2em; background-color: #223440 ; color: white; justify-content: space-around; align-items: center;">
+      <% profiles.forEach(profile => { %>
+        <div class="d-flx" style="width: 380px; border-top: 2px solid #556A73; border-bottom: 2px solid #556A73; gap: 2em; padding-block: 2.5em; margin-top: 2em; justify-content: space-between; align-items: center;">
+          <% if (profile.avatar) { %>
+            <div style="height: 96px; width: 96px; background: url('/images/local/fallout-mirelurk.jpg');
+            border-radius: 50%; background-position: center;
+            background-size: cover;" class="d-flx flx-c-c">
+              <img src="<%= profile.avatar %>" alt="" style="border-radius: 50%;">
+            </div>
+          <% } %> 
+          <%= profile.name %>
+          <a href="/profiles/<%= profile._id %>" style="padding: 1em 2em; background-color: #987345; border: 2px solid white;">Profile</a>
+        </div>
+      <% }) %>
+    </div>
+  </main>
 <%- include('../partials/footer') %>
